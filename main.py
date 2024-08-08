@@ -1,22 +1,5 @@
-def sistema(bp):
-    while True:
-        print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-SALA DO TEMPO=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-        opcao = input("Digite a opção desejada (1 - Treinar, 2 - Ver BP, 3 - Sair): ")
-        if opcao == "1":
-            while True:
-                bp = treinar(bp)
-                opcao = input("Deseja treinar novamente? (Enter - SIM, 1 - NÃO): ")
-                if opcao == "1":
-                    break
-        elif opcao == "2":
-            ver_bp(bp)
-        elif opcao == "3":
-            print("FIM")
-            break
-        else:
-            print("Opção inválida!")
 def treinar(bp):
-
+    while True:
         print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-MENU DE TREINO=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
         print("Você entrou na sala do tempo!")
         print("Você pode treinar para aumentar seu BP!")
@@ -24,6 +7,7 @@ def treinar(bp):
         print("1 - Treino leve (aumenta 100 BP)")
         print("2 - Treino moderado (aumenta 500 BP)")
         print("3 - Treino pesado (aumenta 1000 BP)")
+        print("4 - Sair")
         opcao = input("Digite a opção desejada: ")
         if opcao == "1":
             bp += 100
@@ -34,12 +18,30 @@ def treinar(bp):
         elif opcao == "3":
             bp += 1000
             print("Você treinou e aumentou seu BP em 1000!")
+        elif opcao == "4":
+            print("Você saiu da sala do tempo!")
+            break
         else:
             print("Opção inválida!")
-        return bp
+    return bp
+
 def ver_bp(bp):
     print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-SALA DO TEMPO=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
     print("Seu BP é: ", bp)
+
+def sistema(bp):
+    while True:
+        print("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-SALA DO TEMPO=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
+        opcao = input("Digite a opção desejada (1 - Treinar, 2 - Ver BP, 3 - Sair): ")
+        if opcao == "1":
+            bp = treinar(bp)
+        elif opcao == "2":
+            ver_bp(bp)
+        elif opcao == "3":
+            print("FIM")
+            break
+        else:
+            print("Opção inválida!")
 sistema(0)
 
 
